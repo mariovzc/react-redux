@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Panel, Table, Button, Glyphicon } from 'react-bootstrap';
-
+import store from '../store'
 const styles = {
   footer: {
     fontWeight: 'bold'
@@ -16,6 +16,11 @@ class ShoppingCart extends Component {
     this.state = {
       cart: []
     }
+    store.subscribe(() => {
+      this.setState({
+        cart: store.getState().cart
+      })
+    })
   }
 
   render() {
@@ -45,7 +50,10 @@ class ShoppingCart extends Component {
   }
 
   removeFromCart(product) {
-
+    store.dispatch({
+      type: 'REMOVE_FROM_CART',
+      product // is equals to product: product
+    })
   }
 }
 
