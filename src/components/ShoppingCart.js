@@ -9,7 +9,7 @@ const styles = {
   }
 }
 
-const ShoppingCart = (props, {cart, removeFromCart}) => {
+const ShoppingCart = ({cart, removeFromCart}) => {
   return (
     <Panel header='Shopping Cart'>
       <Table fill>
