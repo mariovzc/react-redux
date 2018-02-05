@@ -4,10 +4,14 @@
   "private": true,
   "devDependencies": {
     "concurrently": "^3.5.1",
-    "react-scripts": "0.8.5"
+    "enzyme": "^3.3.0",
+    "react-addons-test-utils": "^15.6.2",
+    "react-scripts": "0.8.5",
+    "react-test-renderer": "^15.5.4"
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "enzyme-adapter-react-15": "^1.0.5",
     "json-server": "^0.12.1",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
@@ -21,6 +25,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "serv" : "concurrently --kill-others \"react-scripts start\" \"json-server -p3001 --watch products.json\""
+    "serv": "concurrently --kill-others \"react-scripts start\" \"json-server -p3001 --watch products.json\""
+  },
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/src/setupTests.js"
   }
 }
