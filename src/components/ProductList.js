@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
-import { Button, Glyphicon } from 'react-bootstrap';
+import React, { Component } from 'react'
+import { Button, Glyphicon } from 'react-bootstrap'
 import store from '../store'
+import { addToCart } from '../actionCreators'
 const styles = {
   products: {
     display: 'flex',
@@ -47,10 +48,7 @@ class ProductList extends Component {
   }
 
   addToCart(product) {
-    store.dispatch({
-      type: 'ADD_TO_CART',
-      product // is equals to product: product
-    })
+    store.dispatch(addToCart(product))
   }
 }
 
